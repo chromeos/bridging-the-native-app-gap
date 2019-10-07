@@ -1,0 +1,14 @@
+// sass-lint:disable class-name-format no-universal-selectors
+.CodeMirror {
+  font-size: 1.25rem;
+  height: auto;
+  width: 100%;
+
+  * + * {
+    margin-top: inherit;
+  }
+
+  &-line {
+    padding-left: 1rem !important; // sass-lint:disable-line no-important
+  }
+}

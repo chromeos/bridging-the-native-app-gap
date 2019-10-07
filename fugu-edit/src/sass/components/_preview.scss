@@ -1,0 +1,21 @@
+// sass-lint:disable no-universal-selectors
+.unloaded-item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 4em);
+  justify-content: center;
+  width: 100%;
+
+  * + * {
+    margin-top: 0.5em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  img {
+    border: 1px dashed var(--grey-500);
+  }
+}

@@ -1,0 +1,42 @@
+.editor {
+  display: flex;
+  min-height: calc(100vh - 4em);
+  position: relative;
+
+  [data-sidebar] &--sidebar {
+    border-right: 1px solid var(--grey-600);
+    flex-basis: 300px;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0 0.5em;
+    width: 300px;
+  }
+
+  [data-sidebar] &--code,
+  [data-sidebar] &--preview {
+    width: calc(100% - 300px);
+  }
+
+  [data-sidebar] &--code {
+    padding-left: 0.5em;
+  }
+
+  &--preview {
+    $block: var(--grey-200);
+    background-color: var(--white);
+    background-image: linear-gradient(45deg, $block 25%, transparent 25%, transparent 75%, $block 75%, $block 0), linear-gradient(45deg, $block 25%, transparent 25%, transparent 75%, $block 75%, $block 0);
+    background-position: 0 0, 5px 5px;
+    background-repeat: repeat, repeat;
+    background-size: 10px 10px, 10px 10px;
+    display: none;
+    position: relative;
+
+    &[data-preview] {
+      display: block;
+    }
+  }
+
+  [data-preview] + &--code {
+    display: none;
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "predeploy": "npm run build",
+    "public": "public",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**", "src/**", "tests/**", "lib/**", "gulpfile.js", "rollup.config.js", "babel.config.js", "package*.json"]
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "name": "fugu-edit",
+  "version": "1.0.0",
+  "description": "A local-file text editor built using the Native File System API",
+  "main": "public",
+  "contributors": [
+    "Sam Richard <snugug@google.com> (https://snugug.com)"
+  ],
+  "license": "Apache-2.0",
+  "scripts": {
+    "prestart": "del public",
+    "start": "run-s dev",
+    "prebuild": "del public",
+    "build": "NODE_ENV=production run-p js static",
+    "pretest": "run-s test:lint",
+    "test": "nyc ava",
+    "test:lighthouse": "ava tests/lighthouse.js",
+    "posttest": "run-s build test:lighthouse",
+    "server": "gulp dev",
+    "dev": "run-p compile:watch server js:watch",
+    "compile": "eleventy",
+    "compile:watch": "eleventy --watch",
+    "js": "rollup -c",
+    "js:lint": "eslint src gulpfile.js rollup.config.js",
+    "js:watch": "rollup -c -w",
+    "sass": "gulp sass",
+    "build:static": "gulp build",
+    "static": "run-s compile build:static",
+    "lint": "NODE_ENV=production run-p test:lint js:lint sass",
+    "test:lint": "eslint tests",
+    "gulp": "gulp"
+  },
+  "ava": {
+    "files": [
+      "tests/**/*",
+      "!tests/lighthouse.js"
+    ],
+    "helpers": [
+      "tests/helpers/**/*"
+    ],
+    "compileEnhancements": false,
+    "verbose": false,
+    "require": [
+      "esm"
+    ]
+  },
+  "nyc": {
+    "include": [
+      "src/js/**/*.js"
+    ],
+    "all": true
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "run-s lint"
+    }
+  },
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "chrome-launcher": "^0.11.2",
+    "del-cli": "^2.0.0",
+    "eslint": "^6.5.1",
+    "eslint-config-google": "^0.14.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-ava": "^8.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "esm": "^3.2.25",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "husky": "^3.0.7",
+    "lighthouse": "^5.4.0",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^14.1.1",
+    "prettier": "^1.18.2",
+    "rollup": "^1.22.0",
+    "sinon": "^7.5.0"
+  },
+  "dependencies": {
+    "@11ty/eleventy": "^0.8.3",
+    "codemirror": "^5.49.0",
+    "static-site-scaffold": "^0.2.1"
+  },
+  "private": true
+}

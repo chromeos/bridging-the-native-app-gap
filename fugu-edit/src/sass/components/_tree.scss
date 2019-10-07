@@ -1,0 +1,45 @@
+// sass-lint:disable class-name-format
+.tree {
+  .tree {
+    list-style: none;
+    margin-left: 1em;
+  }
+
+  &--CLOSED {
+    display: none;
+  }
+
+  li {
+    margin-top: 0.5em;
+  }
+
+  &--icon {
+    fill: currentColor;
+    flex-shrink: 0;
+    height: 1em;
+    width: 1em;
+  }
+
+  span {
+    overflow-wrap: break-word;
+    padding-left: 1em;
+  }
+
+  button {
+    background: none;
+    border: 0;
+    color: var(--grey-500);
+    display: flex;
+    font-size: 1em;
+    font-weight: normal;
+    line-height: 1.5;
+    padding: 0;
+    text-align: left;
+    text-transform: none;
+    width: 100%;
+
+    &[data-active] {
+      color: var(--grey-100);
+    }
+  }
+}

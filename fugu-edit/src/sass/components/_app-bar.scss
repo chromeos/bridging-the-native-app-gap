@@ -1,0 +1,49 @@
+.top-bar {
+  background-color: var(--yellow-800);
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12); // sass-lint:disable-line no-color-literals
+  column-gap: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  left: 0;
+  padding: 0.5em 1em;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 100;
+
+  &--section {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+
+    &:nth-of-type(2) {
+      flex-direction: row-reverse;
+    }
+  }
+
+  &--button {
+    align-items: center;
+    background: none;
+    border: 0;
+    border-radius: 50%;
+    display: flex;
+    height: 3.5em;
+    justify-content: center;
+    min-width: 0;
+    padding: 0;
+    width: 3.5em;
+
+    svg {
+      height: 2em;
+      width: 2em;
+    }
+  }
+
+  &--title {
+    font-size: 1.5em;
+    line-height: 1;
+    margin: 0;
+    margin-left: 1rem;
+  }
+}
