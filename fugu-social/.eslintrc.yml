@@ -1,0 +1,17 @@
+root: true
+extends:
+  - eslint:recommended
+  - google
+  - plugin:prettier/recommended
+plugins:
+  - import
+  - prettier
+env:
+  browser: true
+  node: false
+parserOptions:
+  parser: babel-eslint
+  ecmaVersion: 2017
+  sourceType: module
+globals:
+  PRODUCTION: readonly
