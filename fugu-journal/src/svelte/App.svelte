@@ -14,28 +14,33 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <script>
-  import Router from 'svelte-spa-router'
+  import Router from "svelte-spa-router";
 
-  import {channelName} from '../js/constants';
-  import * as audioRoute from './routes/Audio.svelte';
-  import * as helpRoute from './routes/Help.svelte';
-  import * as imagesRoute from './routes/Images.svelte';
-  import * as videosRoute from './routes/Videos.svelte';
-  import Navbar from './components/Navbar.svelte';
-  import Snackbar from './components/Snackbar.svelte';
+  import { channelName } from "../js/constants";
+  import * as audioRoute from "./routes/Audio.svelte";
+  import * as helpRoute from "./routes/Help.svelte";
+  import * as imagesRoute from "./routes/Images.svelte";
+  import * as inviteRoute from "./routes/Invite.svelte";
+  import * as videosRoute from "./routes/Videos.svelte";
+  import Navbar from "./components/Navbar.svelte";
+  import Snackbar from "./components/Snackbar.svelte";
 
   const orderedRoutes = [
     imagesRoute,
     videosRoute,
     audioRoute,
-    helpRoute,
+    inviteRoute,
+    helpRoute
   ];
 
-  let message = '';
+  let message = "";
   if (BroadcastChannel) {
     const brodcastChannel = new BroadcastChannel(channelName);
-    brodcastChannel.addEventListener('message', (event) => message = event.data);
-  };
+    brodcastChannel.addEventListener(
+      "message",
+      event => (message = event.data)
+    );
+  }
 
   const routes = {};
   for (const route of orderedRoutes) {
@@ -63,12 +68,11 @@ limitations under the License.
 
 <div id="app">
   <main>
-    <Router {routes}/>
-    <Snackbar {message}/>
+    <Router {routes} />
+    <Snackbar {message} />
   </main>
 
   <footer>
-    <Navbar buttons={orderedRoutes}/>
+    <Navbar buttons={orderedRoutes} />
   </footer>
 </div>
-
