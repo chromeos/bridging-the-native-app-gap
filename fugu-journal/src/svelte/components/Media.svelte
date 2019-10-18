@@ -1,27 +1,12 @@
-<!--
-Copyright 2019 Google, Inc.
-
-Licensed under the [Apache License, Version 2.0](LICENSE) (the "License");
-you may not use this file except in compliance with the License. You may
-obtain a copy of the License at
-
-  http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
 <script>
-  import Button from './Button.svelte';
+  import Button from "./Button.svelte";
 
-  import {cacheName} from '../../js/constants';
+  import { cacheName } from "../../js/constants";
 
-  export let contentType = '';
-  export let src = '';
+  export let contentType = "";
+  export let src = "";
 
-  const canShare = 'canShare' in navigator;
+  const canShare = "canShare" in navigator;
 
   function handleView() {
     window.location.href = src;
@@ -37,12 +22,18 @@ limitations under the License.
     const cache = await caches.open(cacheName);
     const response = await cache.match(src);
     const blob = await response.blob();
-    const file = new  File([blob], src, {
-      type: response.headers.get('content-type'),
+    const file = new File([blob], src, {
+      type: response.headers.get("content-type")
     });
     const files = [file];
-    if (canShare && navigator.canShare({files})) {
-      navigator.share({files});
+    if (canShare && navigator.canShare({ files })) {
+      navigator.share({
+        files,
+        url: "https://fugu-journal.web.app",
+        text:
+          "Check out Fugu Journal to see Web Share, Web Share Target v2, and the Contacts API!",
+        title: "Fugu Journal"
+      });
     }
   }
 </script>
@@ -67,24 +58,54 @@ limitations under the License.
     width: 100%;
   }
 
-  img, video {
+  img,
+  video {
     height: auto;
   }
 
-  audio, img, video {
+  audio,
+  img,
+  video {
     max-width: 100%;
   }
 </style>
 
+<!--
+Copyright 2019 Google, Inc.
+
+Licensed under the [Apache License, Version 2.0](LICENSE) (the "License");
+you may not use this file except in compliance with the License. You may
+obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
 <div class="card">
   {#if contentType.startsWith('image/')}
-    <img {src} alt="An image in the scrapbook.">
+    <img {src} alt="An image in the scrapbook." />
   {:else if contentType.startsWith('video/')}
-    <video {src} controls controlsList="nodownload" alt="A video in the scrapbook."></video>
+    <video
+      {src}
+      controls
+      controlsList="nodownload"
+      alt="A video in the scrapbook." />
   {:else if contentType.startsWith('audio/')}
-    <audio {src} controls controlsList="nodownload" alt="A sound in the scrapbook."></audio>
+    <audio
+      {src}
+      controls
+      controlsList="nodownload"
+      alt="A sound in the scrapbook." />
   {:else}
-    <p>Unable to display media with MIME type <code>{contentType}</code>.</p>
+    <p>
+      Unable to display media with MIME type
+      <code>{contentType}</code>
+      .
+    </p>
   {/if}
   <div class="buttons">
     <Button handleClick={handleView}>View</Button>
