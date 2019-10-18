@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 23.0.6, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill-rule:evenodd;clip-rule:evenodd;fill:#E8EAED;}
+	.st1{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_1_);}
+	.st2{fill-rule:evenodd;clip-rule:evenodd;fill:#AECBFA;}
+	.st3{fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;}
+	.st4{fill-rule:evenodd;clip-rule:evenodd;fill:#202124;}
+	.st5{fill-rule:evenodd;clip-rule:evenodd;fill:#E8F0FE;}
+	.st6{fill-rule:evenodd;clip-rule:evenodd;fill:#D2E3FC;}
+	.st7{fill-rule:evenodd;clip-rule:evenodd;fill:url(#Rectangle_1_);}
+	.st8{fill-rule:evenodd;clip-rule:evenodd;fill:url(#SVGID_2_);}
+</style>
+<title>Slice 1</title>
+<desc>Created with Sketch.</desc>
+<g id="Page-1">
+	<g id="fish-bowl">
+		<g>
+			<g>
+				<path id="Path" class="st0" d="M227.5,66.5c0,0,19.5-2,32.7,4.9c7.6,3.7,12.8,11,14,19.4c0,0-15.2-8.1-23.3,3.1L227.5,66.5z"/>
+				<path class="st0" d="M221.3,87.5c0.2,8.1-5.8,14.9-13.8,15.9c-8,1-15.4-4.3-17.1-12.2L221.3,87.5z"/>
+				
+					<linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="3.8243" y1="510.5464" x2="4.3271" y2="510.9422" gradientTransform="matrix(50.7774 0 0 -43.9293 34.945 22536.75)">
+					<stop  offset="0" style="stop-color:#E37400"/>
+					<stop  offset="0.75" style="stop-color:#F9AB00"/>
+				</linearGradient>
+				<path class="st1" d="M292.1,110.7l-28.1-0.3c-0.4-12.1-7.7-25.6-20.4-35.2C228.8,63.9,211,61.1,198.7,67
+					c-2.3,13.4,5.2,29.8,20.1,41c12.7,9.7,27.7,13.1,39.4,10.2l7.9,26.9c7.7-2.3,12.8-9.4,12.6-17.4
+					C286.6,125.8,292.1,118.8,292.1,110.7L292.1,110.7z"/>
+				<path class="st0" d="M213.4,95.8c5.6,0.5,10.5,4,12.8,9.1c2.3,5.1,1.7,11.1-1.6,15.6c-3.3,4.6-8.8,7-14.3,6.4L213.4,95.8z"/>
+				<ellipse id="Oval" class="st2" cx="317.6" cy="111.4" rx="2.9" ry="2.9"/>
+				<ellipse class="st3" cx="218.1" cy="76.6" rx="5.6" ry="5.6"/>
+				<ellipse class="st4" cx="218.1" cy="76.6" rx="4" ry="4"/>
+				<path class="st5" d="M271.5,170c-65,0-122.5,41.9-142.4,103.9s2.5,129.6,55.3,167.5h174.3c52.8-37.9,75.2-105.6,55.3-167.5
+					C394,211.9,336.4,170,271.5,170L271.5,170z"/>
+				<path class="st6" d="M240.5,170c-65,0-122.5,41.9-142.4,103.9s2.5,129.6,55.3,167.5h174.3c52.8-37.9,75.2-105.6,55.3-167.5
+					C363.1,211.9,305.5,170,240.5,170z"/>
+				<path class="st2" d="M100.5,312.2c0,2.2,0,4.5,0,6.7c0,45.2,21.8,87.7,58.5,114h179.5c33.3-28.4,52.2-70.2,51.6-114
+					c-0.1-7.8-0.8-15.6-2.1-23.2c-18.6,2.8-61.6,8.3-104.8,17.4C234.4,323.3,144.4,316.5,100.5,312.2z"/>
+				<path class="st6" d="M409.7,295.6h-15.5H388c1.3,7.7,1.9,15.4,1.9,23.2c0.7,43.8-18.2,85.6-51.5,114.1h14.8
+					C396.8,401.7,418.6,348.4,409.7,295.6L409.7,295.6z"/>
+				
+					<linearGradient id="Rectangle_1_" gradientUnits="userSpaceOnUse" x1="2.3301" y1="464.5064" x2="2.3301" y2="466.7722" gradientTransform="matrix(123.6331 0 0 -5.0323 -32.0716 2785.5161)">
+					<stop  offset="0" style="stop-color:#8AB4F8"/>
+					<stop  offset="1" style="stop-color:#AECBFA"/>
+				</linearGradient>
+				<path id="Rectangle" class="st7" d="M144.4,438.7h223.2c1.4,0,2.5,1.1,2.5,2.5v4.2c0,1.4-1.1,2.5-2.5,2.5H144.4
+					c-1.4,0-2.5-1.1-2.5-2.5v-4.2C141.9,439.8,143,438.7,144.4,438.7z"/>
+				
+					<linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="3.3086" y1="489.3138" x2="3.3086" y2="487.2576" gradientTransform="matrix(71.2269 0 0 -4.5794 20.3262 2407.6606)">
+					<stop  offset="0" style="stop-color:#E8F0FE"/>
+					<stop  offset="1" style="stop-color:#D2E3FC"/>
+				</linearGradient>
+				<path class="st8" d="M192.1,170h127.7c1.1,0,1.9,0.9,1.9,1.9v4.6c0,1.1-0.9,1.9-1.9,1.9H192.1c-1.1,0-1.9-0.9-1.9-1.9v-4.6
+					C190.2,170.9,191.1,170,192.1,170z"/>
+				<ellipse class="st3" cx="317.6" cy="340.2" rx="5.9" ry="5.9"/>
+				<ellipse class="st2" cx="274.1" cy="218.6" rx="5.9" ry="5.9"/>
+				<ellipse class="st3" cx="266.2" cy="348" rx="2.9" ry="2.9"/>
+			</g>
+		</g>
+	</g>
+</g>
+</svg>
