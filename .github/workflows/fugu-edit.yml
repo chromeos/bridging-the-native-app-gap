@@ -4,9 +4,11 @@ on:
   push:
     paths:
       - 'fugu-edit/**/*'
+      - .github/workflows/fugu-edit.yml
   pull_request:
     paths:
       - 'fugu-edit/**/*'
+      - .github/workflows/fugu-edit.yml
 
 jobs:
   build:
@@ -31,21 +33,9 @@ jobs:
           npm run build --if-present
         env:
           CI: true
-  deploy:
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [12.x]
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v1
-      - name: Switch Node Version ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
       - name: Deploy to Firebase
-        working-directory: ./fugu-edit
-        if: github.ref == 'refs/heads/master'
+        if: success() && github.ref == 'refs/heads/master'
+        working-directory: ./fugu-journal
         run: npx firebase deploy --token ${FIREBASE_TOKEN}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
