@@ -1,0 +1,43 @@
+name: Fugu Edit Build and Deploy
+
+on:
+  push:
+    paths:
+      - 'fugu-edit/**/*'
+  pull_request:
+    paths:
+      - 'fugu-edit/**/*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Switch Node Version ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install
+        run: |
+          cd fugu-edit
+          npm ci
+      - name: Build and Test
+        run: |
+          npm run build --if-present
+        env:
+          CI: true
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+    steps:
+      - name: Deploy to Firebase
+        if: github.ref == 'refs/heads/master'
+        run: npx firebase deploy --token ${FIREBASE_TOKEN}
+        env:
+          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
