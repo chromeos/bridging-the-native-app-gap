@@ -14,7 +14,7 @@
 
   const supported = "contacts" in navigator && "ContactsManager" in window;
 
-  let contacts = [];
+  let contacts = []; // name: [], email: [], tel: []
   let error = false;
 
   async function contactPicker() {
