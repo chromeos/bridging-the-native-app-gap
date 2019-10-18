@@ -35,7 +35,7 @@ jobs:
           CI: true
       - name: Deploy to Firebase
         if: success() && github.ref == 'refs/heads/master'
-        working-directory: ./fugu-journal
+        working-directory: ./fugu-edit
         run: npx -p firebase-tools firebase deploy --token ${FIREBASE_TOKEN}
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
