@@ -48,5 +48,14 @@
       "type": "image/png"
     }
   ],
-  "splash_pages": null
+  "splash_pages": null,
+  "file_handler": [
+    {
+      "action": "/",
+      "name": "Text Files",
+      "accept": {
+        "text/*": [".html", ".md", ".js", ".json", ".css", ".sass"]
+      }
+    }
+  ]
 }
