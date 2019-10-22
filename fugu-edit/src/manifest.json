@@ -1,8 +1,8 @@
 {
-  "name": "My Awesome App",
-  "short_name": "Awesome",
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
+  "name": "Fugu Edit",
+  "short_name": "Fugu Edit",
+  "theme_color": "#ea8600",
+  "background_color": "#ea8600",
   "display": "standalone",
   "scope": "/",
   "start_url": "/",
