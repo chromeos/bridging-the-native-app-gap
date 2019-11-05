@@ -49,13 +49,13 @@
     }
   ],
   "splash_pages": null,
-  "file_handler": [
-    {
-      "action": "/",
-      "name": "Text Files",
-      "accept": {
-        "text/*": [".html", ".md", ".js", ".json", ".css", ".sass"]
+  "file_handler": {
+    "action": ".",
+    "files": [
+      {
+        "name": "Coding Text",
+        "accept": ["text/*", ".html", ".md", ".js", ".json", ".css", ".sass"]
       }
-    }
-  ]
+    ]
+  }
 }
