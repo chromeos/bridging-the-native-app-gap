@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* global CodeMirror, launchQueue, launchParams */
+/* global CodeMirror, launchParams */
 import { log } from './lib/log';
 import { selectFile, selectFolder, openFile, writeFile } from './lib/files';
 
@@ -54,7 +54,7 @@ window.addEventListener('load', () => {
     if (!launchParams.files.length) return;
 
     const handler = launchParams.files[0];
-    openFiles(handler, code, state);
+    openFile(handler, code, state);
   }
 });
 
