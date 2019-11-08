@@ -1,0 +1,95 @@
+.fab {
+  $black1: rgba(0, 0, 0, 0.2);
+  $black2: rgba(0, 0, 0, 0.14);
+  $black3: rgba(0, 0, 0, 0.12);
+  align-items: center;
+  background-color: var(--yellow-800);
+  border: 0;
+  border-radius: 50%;
+  box-shadow: $black1 0 3px 5px -1px, $black2 0 6px 10px 0, $black3 0 1px 18px 0;
+  cursor: pointer;
+  display: flex;
+  height: 3.75em;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  vertical-align: middle;
+  width: 3.75em;
+
+  svg {
+    fill: var(--monokai);
+    height: 1.875em;
+    width: 1.875em;
+  }
+
+  &-wrapper {
+    align-items: flex-end;
+    bottom: 1em;
+    display: flex;
+    flex-direction: column-reverse;
+    position: fixed;
+    right: 1em;
+    z-index: 100;
+  }
+
+  &--actions {
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
+    height: 0;
+    list-style: none;
+    margin: 0;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    padding: 0;
+    transition: height 0.15s ease-in-out;
+
+    li:nth-of-type(1) {
+      #{--action-background}: var(--red-500);
+    }
+
+    li:nth-of-type(2) {
+      #{--action-background}: var(--green-500);
+    }
+
+    li:nth-of-type(3) {
+      #{--action-background}: var(--blue-500);
+    }
+
+    [data-open] ~ & {
+      height: 7.5rem;
+    }
+  }
+
+  &--action {
+    align-items: center;
+    background: var(--monokai);
+    border: 0;
+    color: var(--white);
+    cursor: pointer;
+    display: flex;
+    font-size: 1em;
+    justify-content: center;
+    margin: 0;
+    margin-bottom: 0.5em;
+
+    span {
+      height: 1em;
+      line-height: 1em;
+      overflow: hidden;
+      text-align: right;
+      width: 10ch;
+    }
+
+    svg {
+      background-color: var(--action-background);
+      border-radius: 50%;
+      fill: var(--white);
+      height: 2em;
+      margin-left: 1em;
+      padding: 0.25em;
+      width: 2em;
+    }
+  }
+}

@@ -1,9 +1,5 @@
 body {
   $monokai: #272822;
+  #{--monokai}: $monokai;
   background: $monokai;
-}
-
-main {
-  margin-top: 4.05rem;
-  // padding: 1.5rem;
 }

@@ -70,7 +70,7 @@ h6 {
   line-height: 1.43;
 }
 
-button {
+button:not([class]) {
   -webkit-appearance: none; // sass-lint:disable-line no-vendor-prefixes
   -webkit-tap-highlight-color: rbga(0, 0, 0, 0); // sass-lint:disable-line no-vendor-prefixes
   align-items: center;

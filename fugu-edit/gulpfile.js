@@ -69,7 +69,7 @@ function watchPWA() {
 
 gulp.task('codemirror', () => {
   const files = ['node_modules/codemirror/lib/codemirror.css', 'node_modules/codemirror/lib/codemirror.js', 'node_modules/codemirror/mode/javascript/javascript.js', 'node_modules/codemirror/mode/htmlmixed/htmlmixed.js', 'node_modules/codemirror/mode/yaml-frontmatter/yaml-frontmatter.js', 'node_modules/codemirror/mode/css/css.js', 'node_modules/codemirror/mode/xml/xml.js', 'node_modules/codemirror/mode/markdown/markdown.js', 'node_modules/codemirror/theme/monokai.css'];
-  return gulp.src(files).pipe(gulp.dest('public/__libraries__/codemirror'));
+  return gulp.src(files).pipe(gulp.dest('public/__third-party__/codemirror'));
 });
 
 gulp.task('server', gulp.parallel(scaffold.server, scaffold.external));

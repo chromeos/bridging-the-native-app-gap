@@ -49,12 +49,42 @@ window.addEventListener('keydown', async e => {
   }
 });
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
+  const fab = document.querySelector('.fab');
+  const actions = document.querySelectorAll('.fab--action');
+
+  fab.addEventListener('click', () => {
+    if (fab.hasAttribute('data-open')) {
+      fab.removeAttribute('data-open');
+    } else {
+      fab.setAttribute('data-open', true);
+    }
+  });
+
+  for (let i = 0; i < actions.length; i++) {
+    actions[i].addEventListener('click', async () => {
+      if (i === 0) {
+        await selectFile(code, state);
+        document.querySelector('.editor').removeAttribute('data-sidebar');
+      } else if (i === 1) {
+        const tree = await selectFolder(code);
+        const builtTree = buildTreeView(tree);
+        document.querySelector('.editor--sidebar').appendChild(builtTree);
+        document.querySelector('.editor').setAttribute('data-sidebar', true);
+      } else {
+        await writeFile(state.current, code.getValue());
+      }
+    });
+  }
+});
+
+window.addEventListener('load', async () => {
   if ('launchParams' in window) {
+    console.log(launchParams);
     if (!launchParams.files.length) return;
 
     const handler = launchParams.files[0];
-    openFile(handler, code, state);
+    await openFile(handler, code, state)();
   }
 });
 

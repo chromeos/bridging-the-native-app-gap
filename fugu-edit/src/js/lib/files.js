@@ -13,8 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-import { log } from './log';
+import { snackbar } from './snackbar';
 /**
  * Opens a single file
  *
@@ -53,7 +52,7 @@ export async function selectFolder(code) {
         items: await walkFolder(handler),
       },
     ];
-
+    snackbar(`Opened folder ${handler.name}`);
     code.setValue('');
 
     return tree;
@@ -88,12 +87,16 @@ export function openFile(handler, code, state) {
     preview.removeAttribute('data-preview');
 
     const file = await handler.getFile();
-    log(file);
+
     if (validTextFile(file)) {
       const text = await file.text();
       code.setValue(text);
       code.setOption('mode', { name: 'yaml-frontmatter', base: findMode(file) });
       state.current = handler;
+
+      document.title = handler.name; // eslint-disable-line require-atomic-updates
+      snackbar(`Opened file ${handler.name}`);
+
       return handler;
     }
 
@@ -115,6 +118,10 @@ export function openFile(handler, code, state) {
     preview.setAttribute('data-preview', true);
     preview.appendChild(display);
     state.current = null;
+
+    document.title = handler.name; // eslint-disable-line require-atomic-updates
+    snackbar(`Opened file ${handler.name}`);
+
     return null;
   };
 }
@@ -222,4 +229,6 @@ export async function writeFile(handler, contents) {
   await writer.write(0, contents);
   // Close the file and write the contents to disk
   await writer.close();
+
+  snackbar(`Saved file ${handler.name}`);
 }

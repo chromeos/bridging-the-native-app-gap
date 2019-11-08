@@ -1,6 +1,6 @@
 .editor {
   display: flex;
-  min-height: calc(100vh - 4em);
+  min-height: 100vh;
   position: relative;
 
   [data-sidebar] &--sidebar {

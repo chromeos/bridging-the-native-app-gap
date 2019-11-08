@@ -32,6 +32,7 @@ serviceWorker:
     - css/**/*.css
     - js/**/*.js
     - index.html
+    - __third-party__/**/*
 manifest:
   src: manifest.json
   dest: manifest.json

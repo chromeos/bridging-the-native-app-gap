@@ -54,7 +54,7 @@
     "files": [
       {
         "name": "Coding Text",
-        "accept": ["text/*", ".html", ".md", ".js", ".json", ".css", ".sass"]
+        "accept": ["text/*", "text/plain", ".html", ".md", ".js", ".json", ".css", ".sass"]
       }
     ]
   }

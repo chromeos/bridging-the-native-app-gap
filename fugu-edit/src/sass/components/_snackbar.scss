@@ -1,0 +1,57 @@
+.snackbar {
+  $black1: rgba(0, 0, 0, 0.2);
+  $black2: rgba(0, 0, 0, 0.14);
+  $black3: rgba(0, 0, 0, 0.12);
+  align-items: center;
+  align-self: center;
+  background: black; // sass-lint:disable-line no-color-literals
+  border-radius: 5px;
+  bottom: 1em;
+  box-shadow: $black1 0 3px 5px -1px, $black2 0 6px 10px 0, $black3 0 1px 18px 0;
+  color: var(--grey-400);
+  display: flex;
+  flex: 0;
+  justify-content: center;
+  left: 50%;
+  margin-bottom: 1em;
+  padding: 0.5em 1em;
+  transform: scale(0);
+  transition: transform 0.1s ease-in-out;
+
+  &-wrapper {
+    align-items: flex-start;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+  }
+
+  span {
+    height: 1em;
+    line-height: 1;
+    width: auto;
+  }
+
+  &--close {
+    @extend .fab; // sass-lint:disable-line placeholder-in-extend
+    background: transparent;
+    box-shadow: none;
+    height: 3em;
+    margin-left: 2em;
+    width: 3em;
+
+    &:active {
+      background: var(--grey--700);
+    }
+  }
+
+  svg {
+    fill: var(--grey-400);
+    height: 1.5em;
+    width: 1.5em;
+  }
+}

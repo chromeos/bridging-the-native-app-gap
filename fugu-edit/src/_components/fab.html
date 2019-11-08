@@ -1,0 +1,28 @@
+{% macro fab() %}
+<div class="fab-wrapper">
+  <button class="fab">
+    <svg><use xlink:href="#menu" /></svg>
+  </button>
+  <ul class="fab--actions">
+    <li>
+      <button class="fab--action">
+        <span>Open File</span>
+        <svg><use xlink:href="#file" /></svg>
+      </button>
+    </li>
+    <li>
+      <button class="fab--action">
+        <span>Open Folder</span>
+        <svg><use xlink:href="#closed-folder" /></svg>
+      </button>
+    </li>
+    <li>
+      <button class="fab--action">
+        <span>Save</span>
+        <svg><use xlink:href="#save" /></svg>
+      </button>
+    </li>
+  </ul>
+</div>
+
+{% endmacro %}

@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/png" href="/images/icons/icon-96x96.png" />
 
     <meta name="Description" content="{{ metadesc }}" />
 
@@ -12,25 +13,25 @@
     <!-- Native File System API -->
     <meta http-equiv="origin-trial" content="ApZNhqyvruqAWlyPvMt6S4effdF4brAe2l2AvSlWjJFjdqlA551FdTCULg0E69U9Rl0EcHQpk0dNA1vxw8Q9ZAgAAABueyJvcmlnaW4iOiJodHRwczovL2Z1Z3UtZWRpdC53ZWIuYXBwOjQ0MyIsImZlYXR1cmUiOiJOYXRpdmVGaWxlU3lzdGVtIiwiZXhwaXJ5IjoxNTc1MDUzMTMzLCJpc1N1YmRvbWFpbiI6dHJ1ZX0=" />
 
-    <link rel="stylesheet" href="/__libraries__/codemirror/codemirror.css" />
-    <link rel="stylesheet" href="/__libraries__/codemirror/monokai.css" />
-    <script defer src="/__libraries__/codemirror/codemirror.js"></script>
-    <script defer src="/__libraries__/codemirror/javascript.js"></script>
-    <script defer src="/__libraries__/codemirror/xml.js"></script>
-    <script defer src="/__libraries__/codemirror/css.js"></script>
-    <script defer src="/__libraries__/codemirror/htmlmixed.js"></script>
-    <script defer src="/__libraries__/codemirror/markdown.js"></script>
-    <script defer src="/__libraries__/codemirror/yaml-frontmatter.js"></script>
+    <link rel="stylesheet" href="/__third-party__/codemirror/codemirror.css" />
+    <link rel="stylesheet" href="/__third-party__/codemirror/monokai.css" />
+    <script defer src="/__third-party__/codemirror/codemirror.js"></script>
+    <script defer src="/__third-party__/codemirror/javascript.js"></script>
+    <script defer src="/__third-party__/codemirror/xml.js"></script>
+    <script defer src="/__third-party__/codemirror/css.js"></script>
+    <script defer src="/__third-party__/codemirror/htmlmixed.js"></script>
+    <script defer src="/__third-party__/codemirror/markdown.js"></script>
+    <script defer src="/__third-party__/codemirror/yaml-frontmatter.js"></script>
     <link rel="stylesheet" href="/css/style.css" />
     <script type="module" defer src="/js/main.js"></script>
     <title>{{ title }}</title>
   </head>
   <body>
-    {% include 'icons.html' %} {% from 'nav.html' import nav %}
-
-    {{ nav() }}
+    {% include 'icons.html' %} {% from 'fab.html' import fab %}
+    {{ fab() }}
     <main>
       {{ content | safe }}
     </main>
+    <aside class="snackbar-wrapper"></aside>
   </body>
 </html>
