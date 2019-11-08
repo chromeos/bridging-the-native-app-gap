@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-/* global CodeMirror, launchParams */
+/* global CodeMirror, launchQueue, launchParams */
 import { log } from './lib/log';
 import { selectFile, selectFolder, openFile, writeFile } from './lib/files';
 
@@ -79,6 +79,15 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('load', async () => {
+  if ('launchQueue' in window) {
+    return launchQueue.setConsumer(async launchParams => {
+      if (!launchParams.files.length) return;
+
+      const handler = launchParams.fileHandles[0];
+      await openFile(handler, code, state)();
+    });
+  }
+
   if ('launchParams' in window) {
     console.log(launchParams);
     if (!launchParams.files.length) return;
@@ -87,17 +96,6 @@ window.addEventListener('load', async () => {
     await openFile(handler, code, state)();
   }
 });
-
-// if ('launchQueue' in window) {
-//   launchQueue.setConsumer(launchParams => {
-//     if (!launchParams.files.length) return;
-
-//     console.log(launchParams.fileHandles);
-
-//     const handler = launchParams.fileHandles[0];
-//     openFile(handler, code, state);
-//   });
-// }
 
 /**
  * Builds the HTML for a tree view
