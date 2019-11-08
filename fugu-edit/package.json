@@ -79,7 +79,7 @@
   "dependencies": {
     "@11ty/eleventy": "^0.8.3",
     "codemirror": "^5.49.0",
-    "static-site-scaffold": "^0.2.1"
+    "static-site-scaffold": "^1.0.1"
   },
   "private": true
 }

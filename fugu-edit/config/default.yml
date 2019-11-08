@@ -1,0 +1,47 @@
+# Shared Folders
+folders:
+  input: src
+  output: public
+  includes: _components
+  layouts: _layouts
+
+# Static Asset Folders
+assets:
+  images: images
+  videos: videos
+  fonts: fonts
+
+javascript:
+  files:
+    # Output file (no extension): input file from folders.source
+    js/main: js/main.js
+
+# Sass Config
+sass:
+  src: sass/**/*.scss
+  dest: css
+  lint: true
+  config:
+    outputStyle: compressed
+
+# Service Worker and Manifest config
+serviceWorker:
+  src: sw.js
+  dest: sw.js
+  pattern:
+    - css/**/*.css
+    - js/**/*.js
+    - index.html
+manifest:
+  src: manifest.json
+  dest: manifest.json
+
+# HTML Optimization
+optimize:
+  critical:
+    inline: true
+    minify: true
+  htmlmin:
+    collapseWhitespace: true
+    sortAttributes: true
+    sortClassNames: true

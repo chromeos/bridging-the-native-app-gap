@@ -16,5 +16,5 @@
 const scaffold = require('static-site-scaffold/lib/11ty.config');
 
 module.exports = function(eleventy) {
-  return scaffold()(eleventy);
+  return scaffold(eleventy);
 };
