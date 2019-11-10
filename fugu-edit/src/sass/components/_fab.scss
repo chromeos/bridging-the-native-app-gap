@@ -57,8 +57,12 @@
       #{--action-background}: var(--blue-500);
     }
 
+    li:nth-of-type(4) {
+      #{--action-background}: var(--yellow-500);
+    }
+
     [data-open] ~ & {
-      height: 7.5rem;
+      height: 10.5rem;
     }
   }
 
@@ -71,15 +75,14 @@
     display: flex;
     font-size: 1em;
     justify-content: center;
-    margin: 0;
-    margin-bottom: 0.5em;
+    padding: 0.25em;
 
     span {
       height: 1em;
       line-height: 1em;
       overflow: hidden;
       text-align: right;
-      width: 10ch;
+      width: 8em;
     }
 
     svg {
