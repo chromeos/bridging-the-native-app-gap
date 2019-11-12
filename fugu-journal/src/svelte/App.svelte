@@ -34,7 +34,7 @@ limitations under the License.
   ];
 
   let message = "";
-  if (BroadcastChannel) {
+  if ('BroadcastChannel' in window) {
     const brodcastChannel = new BroadcastChannel(channelName);
     brodcastChannel.addEventListener(
       "message",
