@@ -223,8 +223,6 @@ export async function walkFolder(dir, path = []) {
 export async function writeFile(handler, contents) {
   // Create a writer
   const writer = await handler.createWriter();
-  // Make sure we start with an empty file
-  await writer.truncate(0);
   // Write the full length of the contents
   await writer.write(0, contents);
   // Close the file and write the contents to disk
