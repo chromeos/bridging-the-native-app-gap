@@ -42,7 +42,7 @@ export async function selectFile(code, state) {
 export async function selectFolder(code) {
   try {
     const handler = await window.chooseFileSystemEntries({
-      type: 'openDirectory',
+      type: 'open-directory',
     });
 
     const tree = [
