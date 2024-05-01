@@ -13,7 +13,7 @@
     "rollup-plugin-terser": "^5.1.2",
     "svelte": "^3.0.0",
     "svelte-spa-router": "^1.2.0",
-    "workbox-cli": "^5.0.0-beta.1",
+    "workbox-cli": "^7.1.0",
     "workbox-core": "^5.0.0-beta.1",
     "workbox-precaching": "^5.0.0-beta.1",
     "workbox-range-requests": "^5.0.0-beta.1",
