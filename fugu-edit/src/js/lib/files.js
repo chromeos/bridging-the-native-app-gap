@@ -83,7 +83,7 @@ export function openFile(handler, code, state) {
     }
     // Reset Preview
     const preview = document.querySelector('.editor--preview');
-    preview.innerHTML = '';
+    preview.innerText = '';
     preview.removeAttribute('data-preview');
 
     const file = await handler.getFile();
